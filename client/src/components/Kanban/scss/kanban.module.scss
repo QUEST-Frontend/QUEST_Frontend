@@ -1,0 +1,49 @@
+
+
+.container{
+  width: 95%;
+  margin: auto;
+}
+
+.header{
+  width: 100%;
+  margin-top: 2vh;
+  padding: 0 2vw 0 2vw;
+   .rootFolder{
+     color: black;
+     @include fontStyle(1.3em, 600);
+     span:before{
+       content: '';
+       display: inline-block;
+       border-radius: 20%;
+       margin-right: 0.5vw;
+       width: 1vw;
+       height: 1vw;
+       background-color: #00B884;
+     }
+   }
+  div:last-child{
+    color: #82808F;
+    @include fontStyle(0.9em, 600);
+    span{
+      margin-left: 0.5vw;
+
+    }
+  }
+}
+.pathIcon{
+  object-fit: contain;
+
+}
+.boardContainer{
+  margin-top: 4vh;
+}
+
+.kanban{
+  height: 95vh;
+  background-color: #F9F8FF;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 1vw;
+}

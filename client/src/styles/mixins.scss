@@ -1,0 +1,41 @@
+@mixin flex($fd: row, $ai: center, $jc: center, $wrap: nowrap, $gap: 0){
+  display: flex;
+  flex-direction: $fd;
+  align-items: $ai;
+  justify-content: $jc;
+  flex-wrap: $wrap;
+  gap: $gap;
+}
+@mixin buttonStyle($bg_color){
+  width: 100%;
+  padding: 1vh 0;
+  border: 0;
+  background-color: $bg_color;
+  color: white;
+  border-radius: 1vh;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+@mixin fontStyle($size, $weight){
+  font: {
+    family: 'Plus Jakarta Sans', sans-serif;
+    weight: $weight;
+    size: $size;
+  }
+}
+
+@mixin scrollStyle($el){
+  #{$el}::-webkit-scrollbar{
+    width: 0.2vw;
+  }
+  #{$el}::-webkit-scrollbar-thumb{
+    background: #c0c0c0;
+  }
+}
+
+@mixin gridCentralized{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}

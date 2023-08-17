@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+}
+.container .sidebar {
+  max-height: 100vh;
+  border-right: 1px solid #E6E4F0;
+  position: relative;
+  padding: 0 24px;
+}
+.container .sidebar .logo-container {
+  padding: 17% 0% 0% 10%;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: black;
+}
+.container .sidebar .logo-container .side-logo {
+  margin-left: 10%;
+  margin-top: 10%;
+}
+.container .sidebar .side-links-container {
+  height: 42vh;
+  border-bottom: 1px solid #E6E4F0;
+}
+.container .sidebar .side-project-container {
+  height: 26vh;
+  padding: 0 10px;
+  color: #9896A3;
+}
+.container .sidebar .side-project-container .project-text-and-icon {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+.container .sidebar .side-project-container .project-text-and-icon .projectstext {
+  color: #D3D2DC;
+}
+.container .sidebar .side-project-container .project-text-and-icon .plus-icon {
+  margin-right: 5%;
+}
+.container .sidebar .side-project-container .side-project-container-baby {
+  margin-top: 5%;
+}
+.container .sidebar .side-project-container .example-project {
+  color: #9896A3;
+  display: flex;
+  margin-bottom: 10px;
+  text-decoration: none;
+  border-radius: 15%;
+}
+.container .sidebar .side-project-container .example-project .project-icon {
+  min-width: 22px;
+  max-width: 22px;
+  margin-right: 10px;
+}
+.container .light {
+  font-weight: 300;
+}
+.container .regular {
+  font-weight: 400;
+}
+.container .semi-bold {
+  font-weight: 600;
+}
+.container .medium {
+  font-weight: 500;
+}
+
+/*# sourceMappingURL=sidebar.module.css.map */

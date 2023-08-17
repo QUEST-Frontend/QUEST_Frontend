@@ -1,0 +1,29 @@
+.profile {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  bottom: 0;
+  width: 72%;
+  padding: 5% 7% 5% 7%;
+  display: flex;
+  border-radius: 10%/30%;
+  border: 1px solid #E6E4F0;
+  text-decoration: none;
+  color: #53515B;
+}
+.profile .profileInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.profile .pfp {
+  width: 30px;
+}
+.profile .name {
+  font-size: 1rem;
+}
+.profile .settings {
+  padding-top: 2%;
+}
+
+/*# sourceMappingURL=profile.module.css.map */

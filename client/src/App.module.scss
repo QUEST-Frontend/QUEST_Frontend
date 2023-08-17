@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&display=swap');
+
+$appBgColor: #F9F8FF;
+
+.container{
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1.2fr 4fr 1.5fr;
+  background-color: $appBgColor;
+  overflow:hidden;
+}
+
+.mainContainer{
+  @include flex($jc: space-between, $ai: flex-start);
+}
+
+.content{
+  overflow-y: auto;
+  &::-webkit-scrollbar{
+    width: 0.3vw;
+    height: 0.9vh;
+  }
+  &::-webkit-scrollbar-thumb{
+    background: #a8a8a8;
+    border-radius: 1vh;
+  }
+}

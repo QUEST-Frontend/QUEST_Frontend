@@ -1,0 +1,26 @@
+.notFound{
+  width: 100dvw;
+  height: 100dvh;
+  @include flex($fd: column, $gap: "20px");
+  background-color: white;
+  position: fixed;
+  z-index: 9999;
+
+  .goMainBtn{
+    border: none;
+    padding: 0.7em 1.5em;
+    border-radius: 33px;
+    background-color: #FD2289;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-out, color 0.3s ease-out;
+
+    &:hover{
+      background-color: white;
+      color:  #FD2289;
+      outline: 2px solid #FD2289;
+    }
+  }
+}

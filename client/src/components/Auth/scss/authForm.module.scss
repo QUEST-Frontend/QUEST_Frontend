@@ -1,0 +1,70 @@
+$placeholderColor: #a9a9a9;
+
+.container{
+  width:23vw;
+  margin: 4vh auto 0 auto;
+}
+
+.inputBlock, .passInputBlock{
+  display: grid;
+  border-bottom: 0.1vh solid $placeholderColor;
+  padding: 1vh 0;
+  margin-top: 2vh;
+  transition: 300ms ease-in-out;
+}
+
+.inputBlock:focus-within,
+.passInputBlock:focus-within
+{
+  border-bottom: 0.1vh solid black;
+}
+
+.inputBlock:focus-within > div >.inputIcon,
+.passInputBlock:focus-within > div > .inputIcon,
+.passInputBlock:focus-within > div > .hiderIcon
+{
+  fill: black;
+}
+
+
+.inputBlock{
+  grid-template-columns: 1fr 9fr;
+}
+
+.passInputBlock{
+  grid-template-columns: 1fr 8fr 1fr;
+}
+.inputBlock div:first-child,
+.passInputBlock div:first-child
+{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputIcon, .hiderIcon{
+  width:1.5vw;
+  height:1.5vw;
+  object-fit: cover;
+  fill: $placeholderColor;
+  transition: 300ms ease-in-out;
+}
+.hiderIcon{
+  cursor: pointer;
+}
+.hiderIcon:hover{
+  fill: black;
+}
+.textInput{
+  width: 100%;
+  padding: 1vh;
+  border: 0;
+  font-size: 0.9em;
+  outline: none;
+}
+
+.fullNameContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1.5vw;
+}

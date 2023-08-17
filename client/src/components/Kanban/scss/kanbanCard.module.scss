@@ -1,0 +1,86 @@
+
+$strokeColor : #E6E4F0;
+$fontColor: #56555C;
+$infoTagColor: #E9E8EC;
+$infoTagTextClr: #9D9BA1;
+
+
+@mixin buttonStyle($bg_color){
+  width: 100%;
+  padding: 1vh 0;
+  border: 0;
+  background-color: $bg_color;
+  color: white;
+  border-radius: 1vh;
+  cursor: pointer;
+  font-size: 0.9em;
+  outline: none;
+}
+
+.card{
+  width: 95%;
+  margin: auto;
+  min-height: 20vh;
+  background-color: white;
+  border-radius: 2vh;
+  border: 0.1vw solid $strokeColor;
+}
+.cardTags{
+  display: flex;
+  row-gap: 2vh;
+  column-gap: 0.8vw;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 2vh auto 0 auto;
+  div{
+    flex-shrink: 1;
+  }
+}
+.todo{
+  color: $fontColor;
+  width: 90%;
+  margin: 3vh auto;
+  @include fontStyle(1em, 600);
+  span{
+    margin-left: 0.2vw;
+    :first-child{
+      color: #9b9ba1;
+      font-size: 1.3em;
+    }
+  }
+}
+
+.cardInfo{
+  display: grid;
+  grid-template-columns: 2fr 1.5fr;
+  margin-bottom: 3vh;
+  div:last-child{
+    display: grid;
+    justify-content: center;
+  }
+  .infoTag{
+    margin-left: 1vw;
+  }
+}
+
+.infoTag{
+  padding: 0.5vh 1vw;
+  border-radius: 1vh;
+  background: $infoTagColor;
+  color: $infoTagTextClr;
+  @include fontStyle(0.9em, 500);
+  span:first-child{
+    font-size: 1em;
+    margin-right: 0.2vw;
+  }
+}
+
+.openBtn{
+  width: 90%;
+  margin: auto;
+  button{
+      @include buttonStyle(#e7e7e7);
+    margin-bottom: 3vh;
+    color: #56555C;
+  }
+}

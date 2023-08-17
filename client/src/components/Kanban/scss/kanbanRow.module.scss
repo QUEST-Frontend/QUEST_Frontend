@@ -1,0 +1,85 @@
+
+$ff : 'Plus Jakarta Sans', sans-serif;
+$headTextColor : #9b9ba1;
+
+
+.row{
+  height: 100vh;
+  background-color: #F9F8FF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: .3s ease-in-out;
+  position: relative;
+  .tasks{
+    display: grid;
+    grid-row-gap: 3vh;
+    margin-top: 1vh;
+    margin-bottom: 4vh;
+  }
+  &::-webkit-scrollbar{
+    width: 0.2vw;
+  }
+  &::-webkit-scrollbar-thumb{
+    background: #c0c0c0;
+  }
+  .header{
+    position: sticky;
+    top:0;
+    left: 0;
+  }
+}
+
+.header{
+  display: grid;
+  grid-template-columns: 6fr 1.5fr;
+  align-items: center;
+  color: $headTextColor;
+  background-color: inherit;
+  font:{
+    size: .9em;
+    family: $ff;
+    weight: 500;
+  }
+  div:last-child{
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.2em;
+    button{
+      @include buttonStyle(rgba(255, 255, 255, 0));
+      color: $headTextColor;
+      margin-right: 0.5vw;
+      transition: .3s ease-in-out;
+      &:hover{
+        color: #56555C;
+      }
+    }
+  }
+  .rowName{
+    margin-left: 2vw;
+    @include fontStyle(1em, 600);
+    &:before{
+      content: '';
+      display: inline-block;
+      width: 1vw;
+      height: 1vw;
+      margin-right: 0.5vw;
+      border-radius: 20%;
+    }
+  }
+
+  .defDot{
+    &:before{
+      background-color: $headTextColor;
+    }
+  }
+  .progressDot{
+    &:before{
+      background-color: #4167f8;
+    }
+  }
+  .doneDot{
+    &:before{
+      background-color: #41f850;
+    }
+  }
+}

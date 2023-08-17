@@ -1,0 +1,53 @@
+
+.side-link {
+    color: #9896A3;
+
+    display: flex;
+    padding: 14px 109px 14px 13px;
+    text-decoration: none;
+
+    border-radius: 10% / 30%;
+
+    .side-icon {
+        min-width: 22px;
+        margin-right: 10px;
+    }
+
+}
+
+.side-link.active {
+    &.animated-background {
+        animation: backgroundAppear 0.3s ease forwards;
+    }
+
+    color: #F5FFFC;
+}
+
+@keyframes backgroundAppear {
+    from {
+        background-color: transparent;
+    }
+
+    to {
+        background-color: #5577FF;
+    }
+}
+
+
+
+.light {
+    font-weight: 300;
+}
+
+.regular {
+    font-weight: 400;
+}
+
+.semi-bold {
+    font-weight: 600;
+}
+
+
+.medium {
+    font-weight: 500;
+}

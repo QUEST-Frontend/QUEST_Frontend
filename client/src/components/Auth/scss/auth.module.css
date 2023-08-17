@@ -1,0 +1,109 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #F9F8FF;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.authBlock {
+  width: 30vw;
+  min-height: 50vh;
+  background-color: white;
+}
+
+.logoBlock {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  margin-top: 5vh;
+}
+
+.logo {
+  width: 10vw;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
+.logoImgBlock {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoImg {
+  width: 2vw;
+  height: 2vw;
+  object-fit: cover;
+}
+
+.logoText {
+  color: black;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.3em;
+}
+
+.formSelector {
+  width: 100%;
+  margin-top: 4vh;
+}
+
+.submitBlock {
+  width: 100%;
+  margin: 6vh 0 7vh 0;
+  text-align: center;
+}
+
+.submitBtn {
+  padding: 0.7vh 2vw;
+  border-radius: 10vh;
+  outline: none;
+  border: 0;
+  font-size: 1em;
+  background-color: rgba(0, 184, 132, 0.2);
+  color: rgb(0, 184, 132);
+  font-weight: bolder;
+  cursor: pointer;
+  transition: 300ms ease-in-out;
+}
+
+.submitBtn:hover {
+  padding: 0.7vh 4vw;
+  background-color: rgba(0, 184, 132, 0.3);
+}
+
+.submitBtn:disabled {
+  background-color: rgb(180, 180, 180);
+  color: rgb(245, 245, 245);
+  cursor: no-drop;
+}
+
+.submitBtn:disabled:hover {
+  padding: 0.7vh 2vw;
+}
+
+@media all and (max-width: 1200px) {
+  .authBlock {
+    width: 35vw;
+  }
+}
+@media all and (max-width: 1100px) {
+  .authBlock {
+    width: 40vw;
+  }
+}
+@media all and (max-width: 900px) {
+  .authBlock {
+    width: 50vw;
+    min-height: 70vh;
+  }
+}
+@media all and (max-width: 700px) {
+  .authBlock {
+    width: 60vw;
+    min-height: 80vh;
+  }
+}
+
+/*# sourceMappingURL=auth.module.css.map */
