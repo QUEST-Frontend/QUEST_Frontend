@@ -11,8 +11,9 @@ const Loadable = (Component: ComponentType) => (props: any) => (
 )
 
 const AuthPage = Loadable(lazy(async() => await import('./pages/auth/AuthPage')))
-const ProjectsPage = Loadable(lazy(async() => await import('./pages/projects/ProjectsPage.jsx')))
-const NotFoundPage = Loadable(lazy(async() => await import('./pages/notFound/NotFound404.jsx')))
+const ProjectsPage = Loadable(lazy(async() => await import('./pages/projects/ProjectsPage')))
+const NotFoundPage = Loadable(lazy(async() => await import('./pages/notFound/NotFound404')))
+const ProfilePage = Loadable(lazy(async() => await import('./pages/profile/Profile')))
 
 export const router: RouteObject[] = [
   {
@@ -37,6 +38,14 @@ export const router: RouteObject[] = [
         <GuestGuard>
           <AuthPage/>
         </GuestGuard>
+    )
+  },
+  {
+    path: 'profile',
+    element: (
+        <AuthPageGuard>
+          <ProfilePage/>
+        </AuthPageGuard>
     )
   },
   {

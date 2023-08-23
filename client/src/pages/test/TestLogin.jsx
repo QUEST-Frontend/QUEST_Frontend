@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useForm} from "react-hook-form";
 import {useNavigate} from "react-router-dom"
 import {loginUser} from "../../reduxTK/features/auth/authActions.js";
-import isObjEmpty from "../../utilities/isObjEmpty.js";
+import isObjEmpty from "../../utils/isObjEmpty.js";
 import {useNotification} from "../../hooks/useNotification.js";
 import {ReactNotifications} from "react-notifications-component";
 import Loading from "../../components/UI/loading/Loading.jsx";

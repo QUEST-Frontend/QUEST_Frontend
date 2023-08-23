@@ -1,6 +1,6 @@
 import React from 'react';
 import cardOpenedStyle from "./scss/cardOpened.module.scss";
-import Tag from "../Projects/Tag.jsx";
+import Tag from "../Projects/Tag.tsx";
 import kanbanCardStyle from "./scss/kanbanCard.module.scss";
 import {MdOutlineAlternateEmail} from "react-icons/md";
 import {HiOutlineArrowNarrowRight} from "react-icons/hi";

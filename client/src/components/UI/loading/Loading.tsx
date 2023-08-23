@@ -1,7 +1,14 @@
 import GridLoader from "react-spinners/GridLoader";
 import cl from "./Loading.module.css"
+import {FC} from 'react'
 
-const Loading = ({loading=false, size=20, color="#FD2289"}) => {
+interface LoadingProps{
+  loading: boolean
+  size?: number
+  color?: string
+}
+
+const Loading: FC<LoadingProps> = ({loading=false, size=20, color="#FD2289"}) => {
     if(loading){
         return (
             <div className={cl.loading}>

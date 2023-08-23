@@ -1,6 +1,6 @@
 import React, {useRef, useState} from 'react';
 import projectCardStyle from './scss/projectCard.module.scss'
-import Tag from "./Tag.jsx";
+import Tag from "./Tag.tsx";
 import ProjectModal from "./ProjectModal.jsx";
 import ProjectAcc from "./ProjectAcc.jsx";
 import Modal from "components/UI/modal/Modal.jsx";

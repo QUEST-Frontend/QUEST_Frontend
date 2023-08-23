@@ -2,14 +2,16 @@ import classes from './notes.module.scss';
 import notesIcon from '../../assets/navicons/notes.svg';
 import plusIcon from '../../assets/navicons/plus.svg';
 import Note from '../UI//note/Note';
+import {FC} from 'react'
+import {INote, ITag} from '../../types.ts'
 
-const Notes = () => {
-    const tags = [
-        ['Science', 'red'],
-        ['Tech', 'blue'],
-        ['Hi-fi', 'green'],
+const Notes: FC = () => {
+    const tags: ITag[] = [
+        {name: 'Science', color: 'red'},
+        {name: 'Tech', color: 'blue'},
+        {name: 'Hi-fi', color: 'green'},
     ];
-    const notesData = [
+    const notesData: INote[] = [
         {
             date: "2 Apr. 2023",
             theme: "ChatGPT Tricks for business marketing",

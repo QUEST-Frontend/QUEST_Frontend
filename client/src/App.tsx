@@ -1,19 +1,11 @@
-import 'react-notifications-component/dist/theme.css'
-import 'animate.css/animate.min.css';
+import 'react-toastify/dist/ReactToastify.css';
 import cl from './App.module.scss'
-import {BrowserRouter, Route, Routes, Navigate, useRoutes} from 'react-router-dom'
-import {ReactNotifications} from "react-notifications-component";
+import {useRoutes} from 'react-router-dom'
 import {useEffect} from "react";
-import AuthPage from "./pages/auth/AuthPage.jsx";
-import Sidebar from "./components/sidebar/Sidebar.jsx";
-import NotFound404 from "./pages/notFound/NotFound404.jsx";
-import {useNotification} from "./hooks/useNotification.js";
-import Loading from "components/UI/loading/Loading.jsx";
-import NotAuth from "./pages/notAuth/NotAuth.jsx";
-import ProjectsPage from "./pages/projects/ProjectsPage.jsx";
+import Sidebar from "./components/sidebar/Sidebar";
+import Loading from "components/UI/loading/Loading";
+
 import Notes from "components/notes/Notes.jsx";
-import Profile from "./pages/profile/Profile.jsx";
-import Kanban from "./components/Kanban/Kanban.jsx"
 import {
   authErrorSelector,
   authPendingSelector,
@@ -21,6 +13,7 @@ import {
 } from './store/features/auth/authSlice.ts'
 import {useDispatch, useSelector} from 'react-redux'
 import { router } from './routes'
+import {toast, ToastContainer} from 'react-toastify'
 
 
 export default function App() {
@@ -29,22 +22,22 @@ export default function App() {
   const user = useSelector(authUserSelector)
   const error = useSelector(authErrorSelector)
   const pending = useSelector(authPendingSelector)
-  const token = localStorage.getItem('accessToken')
+  const accessToken = localStorage.getItem('accessToken')
 
   useEffect(() => {
-    if(token){
-      dispatch(loginToken({token}))
+    if(accessToken){
+      dispatch(loginToken({accessToken}))
     }
-  }, [token])
+  }, [accessToken])
 
   useEffect(() => {
     if(error){
-      useNotification("danger", "Authorization", error)
+      toast.error(error)
     }
   }, [user, error])
   return (
       <>
-        <ReactNotifications />
+        <ToastContainer />
         <div className={cl.mainContainer}>
           {user && <Sidebar/>}
           { content }

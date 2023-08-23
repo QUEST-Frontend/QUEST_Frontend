@@ -1,11 +1,14 @@
-
+import {FC} from 'react'
 import settings from '../../../assets/navicons/settingbutton.svg';
 import pfp from '../../../assets/navicons/pfp.svg';
 import { Link } from 'react-router-dom';
 import classes from './profile.module.scss';
 
+interface ProfileProps{
+  name: string
+}
 
-const Profile = ({name}) => {
+const Profile: FC<ProfileProps> = ({name}) => {
     return (
         <Link to={'/profile'} className={classes.profile}>
             <div className={classes.profileInfo}>

@@ -1,4 +1,4 @@
-import React from 'react';
+import {FC} from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import classes from './sidebar.module.scss';
 import overviewIcon from '../../assets/navicons/overview.svg';
@@ -9,14 +9,15 @@ import projectsIcon from 'assets/navicons/projects.svg';
 import teamsIcon from 'assets/navicons/teams.svg';
 import exampleProj from 'assets/navicons/exampleproj.svg';
 import logo from 'assets/navicons/logo.svg';
-import SidebarLink from '../UI/sidebar-link/SidebarLink';
-import Profile from '../UI/profile/Profile';
+import SidebarLink from '../UI/sidebar-link/SidebarLink.tsx';
+import Profile from '../UI/profile/Profile.tsx';
 import plusIcon from 'assets/navicons/plus.svg';
 import {useSelector} from "react-redux";
 import {authUserSelector} from "../../store/features/auth/authSlice.ts";
+import {ISidebarLink} from '../../types.ts'
 
-const Sidebar = () => {
-  const sideLinks = [
+const Sidebar: FC = () => {
+  const sideLinks: ISidebarLink[] = [
     { name: 'Overview', icon: overviewIcon, path: '/overview' },
     { name: 'Calendar', icon: calendarIcon, path: '/calendar' },
     { name: 'Analytics', icon: analyticsIcon, path: '/analytics' },
@@ -66,7 +67,7 @@ const Sidebar = () => {
                   ))}
                 </div>
               </div>
-              <Profile name={user.first_name + " " + user.last_name} />
+              <Profile name={user?.first_name + " " + user?.last_name} />
             </div>
           </div>
 
