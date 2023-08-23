@@ -1,13 +1,23 @@
+import {FC} from 'react'
 import classes from './note.module.scss'
 import paperIcon from '../../../assets/navicons/paper.svg';
 import threedots from '../../../assets/navicons/threedots.svg';
-import Tag from '../../Projects/Tag';
+import Tag from '../../Projects/Tag.tsx';
+import {ITag} from '../../../types.ts'
 
 
-const Note = ({ date, theme, text, tags }) => {
+interface NoteProps {
+  date: string
+  theme: string
+  text: string
+  tags: ITag[]
+  className: string
+}
+
+const Note: FC<NoteProps> = ({ date, theme, text, tags, className }) => {
   console.log(tags)
   return (
-    <div className={classes.note}>
+    <div className={classes.note + " " + className}>
       <div className={classes.flexcont}>
         <div style={{ display: 'flex' }}>
           <img src={paperIcon} className={classes.docicon} />
@@ -19,7 +29,7 @@ const Note = ({ date, theme, text, tags }) => {
       <div className={classes.text}>{text}</div>
       <div className={classes.categories}>
         {tags.map((tag, index) => (
-          <Tag key={index} text={tag[0]} color={tag[1]} />
+          <Tag key={index} text={tag.name} color={tag.color} />
         ))}
       </div>
     </div>

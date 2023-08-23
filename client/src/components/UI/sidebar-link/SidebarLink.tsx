@@ -1,8 +1,14 @@
+import {FC} from 'react';
 import classes from './sidebar-link.module.scss';
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import {ISidebarLink} from '../../../types.ts'
 
+interface SidebarLinkProps {
+    link: ISidebarLink
+    index: number
+}
 
-const SidebarLink = ({link, index}) => {
+const SidebarLink: FC<SidebarLinkProps> = ({link, index}) => {
     const location = useLocation();
     const currentPath = location.pathname;
     return (

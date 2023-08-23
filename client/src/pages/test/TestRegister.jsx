@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useForm} from "react-hook-form";
 import {useNavigate} from "react-router-dom"
 import {registerUser} from "../../reduxTK/features/auth/authActions.js";
-import isObjEmpty from "../../utilities/isObjEmpty.js";
+import isObjEmpty from "../../utils/isObjEmpty.js";
 
 function TestRegister() {
     const dispatch = useDispatch()

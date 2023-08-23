@@ -1,21 +1,19 @@
-import profilePicture from 'assets/profile-picture.png'
 import classes from './profile.module.scss'
 import ProgressBar from 'components/UI/progress-bar/ProgressBar.jsx';
 import {useSelector} from "react-redux";
+import {authUserSelector} from '../../store/features/auth/authSlice.ts'
 
 const Profile = () => {
-    const {userInfo} = useSelector(state => state.auth);
-    const name = 'Alisher Zhumadil';
-    const position = 'Python developer'
+    const user = useSelector(authUserSelector)
     const level = 17;
     const percentage = 30;
     const solved = 110;
 
     return(
         <div className={classes.container}>
-            <img src={profilePicture} className={classes['profile-picture']} />
-            <span className={classes.name}>{name}</span>
-            <span className={classes.position}>{position}</span>
+            <img src={user?.user.profile_image} className={classes['profile-picture']} />
+            <span className={classes.name}>{user?.user.username}</span>
+            <span className={classes.position}>{user?.position.code}</span>
             <div className={classes.progress}>
                 <div className={classes['level-progress']}>
                     <span className={classes.level}>{level}</span>

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import kanbanCardStyle from './scss/kanbanCard.module.scss'
-import Tag from "../Projects/Tag.jsx";
+import Tag from "../Projects/Tag.tsx";
 import {IoDocumentText} from "react-icons/io5";
 import {MdOutlineAlternateEmail} from "react-icons/md";
 import {Draggable} from "react-beautiful-dnd";

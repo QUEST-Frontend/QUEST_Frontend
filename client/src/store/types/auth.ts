@@ -4,7 +4,8 @@ export interface AuthState {
   pending: boolean
   user: IUser | null
   error: string | null
-  token: string
+  accessToken: string
+  refreshToken: string
   isAuthenticated: boolean
 }
 
@@ -26,11 +27,17 @@ export interface LoginPayload {
 
 export interface LoginSuccessPayload {
   user: IUser
-  token: string
+  accessToken: string
+  refreshToken: string
 }
 
 export interface LoginFailurePayload {
   error: string
+}
+
+export interface TokenPayload {
+  accessToken: string
+  refreshToken: string
 }
 
 export interface LoginAction {
@@ -49,7 +56,7 @@ export interface LoginFailureAction {
 }
 
 export interface LoginTokenPayload {
-  token: string | null
+  accessToken: string | null
 }
 
 export interface LoginTokenAction {
