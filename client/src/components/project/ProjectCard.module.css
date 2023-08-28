@@ -1,0 +1,159 @@
+.projectCard {
+  min-width: 248px;
+  padding: 10px 10px 22px;
+  border: 1px solid #E6E4F0;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #ffffff;
+}
+.projectCard .cardImage {
+  width: 100%;
+  height: 112px;
+  border-radius: 10px;
+}
+.projectCard .content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 10px;
+}
+.projectCard .content .info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+.projectCard .content .info .infoLeft {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+.projectCard .content .info .projectImage {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+}
+.projectCard .content .info .projectName {
+  font-weight: 600;
+  font-size: 1rem;
+}
+.projectCard .content .tags {
+  display: flex;
+  gap: 3px;
+}
+.projectCard .element {
+  padding: 4px 7px;
+  background-color: white;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-bottom: 1px solid #9D9BA1;
+}
+.projectCard .element:hover {
+  background-color: rgb(243, 243, 243);
+}
+.projectCard .element:last-child {
+  border-bottom: none;
+}
+.projectCard .modal {
+  max-width: 830px;
+}
+.projectCard .modal .header {
+  position: relative;
+  width: 100%;
+  height: 198px;
+  border-radius: 14px;
+}
+.projectCard .modal .header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.projectCard .modal .headerInfo {
+  position: absolute;
+  bottom: 0;
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.projectCard .modal .headerInfo .heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.projectCard .modal .headerInfo .heading .projectImage {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+.projectCard .modal .headerInfo .heading .projectName {
+  color: white;
+}
+.projectCard .modal .headerInfo .dates {
+  display: flex;
+  gap: 16px;
+  font-size: 0.875rem;
+}
+.projectCard .modal .headerInfo .dates h3 {
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 600;
+}
+.projectCard .modal .headerInfo .dates p {
+  font-weight: 500;
+}
+.projectCard .modal .body {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 22px 0;
+}
+.projectCard .modal .description {
+  display: flex;
+  flex-direction: column;
+  max-width: 372px;
+}
+.projectCard .modal .description h2 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+.projectCard .modal .description p {
+  color: #999;
+  font-size: 0.875rem;
+}
+.projectCard .modal .infoList {
+  display: flex;
+  max-width: 350px;
+  width: 100%;
+  flex-direction: column;
+  gap: 12px;
+}
+.projectCard .modal .infoList .item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+.projectCard .modal .infoList .item .field {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #82808F;
+}
+.projectCard .modal .infoList .item .field .icon {
+  width: 24px;
+  height: 24px;
+}
+.projectCard .modal .infoList .item .field h2 {
+  font-size: 1rem;
+}
+.projectCard .modal .infoList .item .value {
+  display: flex;
+  gap: 3px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #999;
+}
+
+/*# sourceMappingURL=ProjectCard.module.css.map */

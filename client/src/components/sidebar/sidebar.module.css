@@ -2,7 +2,6 @@
   display: flex;
 }
 .container .sidebar {
-  max-height: 100vh;
   border-right: 1px solid #E6E4F0;
   position: relative;
   padding: 0 24px;
@@ -18,18 +17,18 @@
   margin-top: 10%;
 }
 .container .sidebar .side-links-container {
-  height: 42vh;
   border-bottom: 1px solid #E6E4F0;
 }
 .container .sidebar .side-project-container {
-  height: 26vh;
   padding: 0 10px;
   color: #9896A3;
+  margin-bottom: 20px;
 }
 .container .sidebar .side-project-container .project-text-and-icon {
   display: flex;
   justify-content: space-between;
   margin-top: 5%;
+  margin-bottom: 20px;
 }
 .container .sidebar .side-project-container .project-text-and-icon .projectstext {
   color: #D3D2DC;
@@ -39,13 +38,21 @@
 }
 .container .sidebar .side-project-container .side-project-container-baby {
   margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 .container .sidebar .side-project-container .example-project {
   color: #9896A3;
   display: flex;
   margin-bottom: 10px;
   text-decoration: none;
-  border-radius: 15%;
+  padding: 7px 10px;
+  border-radius: 10px;
+}
+.container .sidebar .side-project-container .example-project:hover {
+  background-color: rgba(108, 108, 108, 0.46);
+  color: white;
 }
 .container .sidebar .side-project-container .example-project .project-icon {
   min-width: 22px;

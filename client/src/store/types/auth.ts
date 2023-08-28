@@ -9,15 +9,13 @@ export interface AuthState {
   isAuthenticated: boolean
 }
 
-export interface LoginResponse{
-  user_data: IUser
-}
-
 export enum AuthActionTypes {
   LOGIN = "auth/login",
-  LOGIN_SUCCESS = "auth/loginSuccess",
-  LOGIN_FAILURE = "auth/loginFailure",
   LOGIN_TOKEN = "auth/loginToken"
+}
+
+export interface LoginResponse{
+  user_data: IUser
 }
 
 export interface LoginPayload {
@@ -31,32 +29,18 @@ export interface LoginSuccessPayload {
   refreshToken: string
 }
 
-export interface LoginFailurePayload {
-  error: string
-}
-
 export interface TokenPayload {
   accessToken: string
   refreshToken: string
 }
 
+export interface LoginTokenPayload {
+  accessToken: string | null
+}
+
 export interface LoginAction {
   type: AuthActionTypes.LOGIN,
   payload: LoginPayload
-}
-
-export interface LoginSuccessAction {
-  type: AuthActionTypes.LOGIN_SUCCESS,
-  payload: LoginSuccessPayload
-}
-
-export interface LoginFailureAction {
-  type: AuthActionTypes.LOGIN_FAILURE,
-  payload: LoginFailurePayload
-}
-
-export interface LoginTokenPayload {
-  accessToken: string | null
 }
 
 export interface LoginTokenAction {

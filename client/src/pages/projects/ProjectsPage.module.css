@@ -1,3 +1,14 @@
+.projects {
+  background-color: #F9F8FF;
+  width: 100%;
+  padding: 33px;
+}
 
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 248px);
+  gap: 22px;
+  justify-content: space-between;
+}
 
 /*# sourceMappingURL=ProjectsPage.module.css.map */

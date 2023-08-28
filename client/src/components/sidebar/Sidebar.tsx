@@ -15,8 +15,12 @@ import plusIcon from 'assets/navicons/plus.svg';
 import {useSelector} from "react-redux";
 import {authUserSelector} from "../../store/features/auth/authSlice.ts";
 import {ISidebarLink} from '../../types.ts'
+import {projectsPendingSelector, projectsSelector} from '../../store/features/project/projectSlice.ts'
+import {PulseLoader} from 'react-spinners'
 
 const Sidebar: FC = () => {
+  const projects = useSelector(projectsSelector)
+  const pending = useSelector(projectsPendingSelector)
   const sideLinks: ISidebarLink[] = [
     { name: 'Overview', icon: overviewIcon, path: '/overview' },
     { name: 'Calendar', icon: calendarIcon, path: '/calendar' },
@@ -27,7 +31,6 @@ const Sidebar: FC = () => {
   ];
   const user = useSelector(authUserSelector)
   // const exampleProjects = ['Salam', 'Some Services', 'dsak dkas', 'Project', 'Project',];
-  const exampleProjects = ['Salam', 'Some Services',];
   const location = useLocation();
   const currentPath = location.pathname;
 
@@ -55,22 +58,30 @@ const Sidebar: FC = () => {
                   <img src={plusIcon} className={classes['plus-icon']}/>
                 </div>
                 <div className={classes['side-project-container-baby']}>
-                  {exampleProjects.slice(0, 5).map((project, index) => (
-                      <Link
-                          className={`${classes['example-project']} ${project.path === currentPath ? classes['active'] : ''}`}
+                  {pending ? <PulseLoader
+                      color="rgb(0, 184, 132)"
+                      loading={true}
+                      size={20}
+                      aria-label="Loading Spinner"
+                      data-testid="loader"
+                  />
+                      :
+                    projects?.slice(0, 5).map((project, index) => (
+                       <Link
+                          className={`${classes['example-project']} ${project.id.toString() === currentPath ? classes['active'] : ''}`}
                           key={index}
-                          // to={`/project/${project}`} // Путь для каждого проекта
-                      >
-                        <img src={exampleProj} alt={project} className={classes['project-icon']} />
-                        <span className={classes['project-name']}>{project}</span>
-                      </Link>
-                  ))}
+                          to={`/projects/${project.id}`} // Путь для каждого проекта
+                       >
+                        <img src={exampleProj} alt={project.name} className={classes['project-icon']} />
+                        <span className={classes['project-name']}>{project.name}</span>
+                       </Link>
+                    ))
+                  }
                 </div>
               </div>
-              <Profile name={user?.first_name + " " + user?.last_name} />
+              <Profile name={user?.first_name + " " + user?.last_name} src={user?.user.profile_image} />
             </div>
           </div>
-
           <div>
             <Outlet />
           </div>

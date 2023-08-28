@@ -15,7 +15,7 @@ export const api = axios.create({
   }
 })
 
-export const apiWithLoginAndErrorMessaging = axios.create({
+export const apiWithAuthAndErrorMessaging = axios.create({
   baseURL: `${import.meta.env.VITE_BACKEND_URL}/api/v1`,
   headers: {
     'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ export const apiWithLoginAndErrorMessaging = axios.create({
   }
 })
 
-apiWithLoginAndErrorMessaging.interceptors.request.use(async (config) => {
+apiWithAuthAndErrorMessaging.interceptors.request.use(async (config) => {
   const accessToken = authAccessTokenSelector(store.getState())
   const refreshToken = authRefreshTokenSelector(store.getState())
   if (accessToken && refreshToken) {
@@ -40,9 +40,16 @@ apiWithLoginAndErrorMessaging.interceptors.request.use(async (config) => {
   return config
 })
 
-apiWithLoginAndErrorMessaging.interceptors.response.use(undefined, async (error) => {
+apiWithAuthAndErrorMessaging.interceptors.response.use(undefined, async (error) => {
   if (axios.isAxiosError(error)) {
-    toast.error('Внутренняя Ошибка Сервера')
+    toast.error(error.response?.data.detail ?? 'Internal Server Error')
+  }
+  return await Promise.reject(error)
+})
+
+api.interceptors.response.use(undefined, async (error) => {
+  if (axios.isAxiosError(error)) {
+    toast.error(error.response?.data.detail ?? 'Internal Server Error')
   }
   return await Promise.reject(error)
 })

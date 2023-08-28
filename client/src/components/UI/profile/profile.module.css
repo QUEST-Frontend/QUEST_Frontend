@@ -1,15 +1,15 @@
 .profile {
-  position: absolute;
   display: flex;
   justify-content: space-between;
   bottom: 0;
-  width: 72%;
+  width: 100%;
   padding: 5% 7% 5% 7%;
   display: flex;
-  border-radius: 10%/30%;
+  border-radius: 10px;
   border: 1px solid #E6E4F0;
   text-decoration: none;
   color: #53515B;
+  margin-bottom: 20px;
 }
 .profile .profileInfo {
   display: flex;
@@ -18,6 +18,7 @@
 }
 .profile .pfp {
   width: 30px;
+  border-radius: 10px;
 }
 .profile .name {
   font-size: 1rem;

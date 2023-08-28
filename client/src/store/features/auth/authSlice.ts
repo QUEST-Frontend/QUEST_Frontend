@@ -1,7 +1,6 @@
 import {createSlice, PayloadAction, createAction} from "@reduxjs/toolkit";
 import {
   AuthState,
-  LoginFailurePayload,
   LoginPayload,
   LoginSuccessPayload,
   LoginTokenPayload,
@@ -33,10 +32,6 @@ const authSlice = createSlice({
       state.refreshToken = action.payload.refreshToken
       state.isAuthenticated = true
     },
-    loginFailure: (state, action: PayloadAction<LoginFailurePayload>) => {
-      state.pending = false;
-      state.error = action.payload.error
-    },
     loginToken: (state) => {
       state.pending = true;
     },
@@ -54,13 +49,11 @@ const authSlice = createSlice({
 
 export const login = createAction<LoginPayload>('auth/login')
 export const loginSuccess = createAction<LoginSuccessPayload>('auth/loginSuccess')
-export const loginFailure = createAction<LoginFailurePayload>('auth/loginFailure')
 export const loginToken = createAction<LoginTokenPayload>('auth/loginToken')
 export const setToken = createAction<TokenPayload>('auth/setToken')
 
 export const authUserSelector = ((state: RootState): IUser | null => state.auth.user)
 export const authPendingSelector = ((state: RootState): boolean => state.auth.pending)
-export const authErrorSelector = ((state: RootState): string | null => state.auth.error)
 export const authAccessTokenSelector = ((state: RootState): string => state.auth.accessToken)
 export const authRefreshTokenSelector = ((state: RootState): string => state.auth.refreshToken)
 export const isAuthenticatedSelector = ((state: RootState): boolean => state.auth.isAuthenticated)

@@ -1,3 +1,6 @@
+import {IDepartment} from './IDepartment.ts'
+import {IPosition} from './IPosition.ts'
+
 export interface IUser{
     user: IUserCredentials
     first_name: string
@@ -6,9 +9,9 @@ export interface IUser{
     gender: string
     birth_date: string
     position: IPosition
-    department: isDepartment
-    access: string
-    refresh: string
+    department: IDepartment
+    accessToken: string
+    refreshToken: string
 }
 
 interface IUserCredentials{
@@ -18,21 +21,6 @@ interface IUserCredentials{
     profile_image: string
 }
 
-interface IPosition {
-    code: string
-    is_director: boolean
-}
 
-interface isDepartment {
-    id: number
-    name: string
-    company: ICompany
-}
 
-interface ICompany{
-    name: string
-    description: string
-    email: string
-    contact_phone: number
-    address: string
-}
+
