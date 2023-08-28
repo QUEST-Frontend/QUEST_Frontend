@@ -3,7 +3,7 @@
   display: flex;
   padding: 14px 109px 14px 13px;
   text-decoration: none;
-  border-radius: 10%/30%;
+  border-radius: 10px;
 }
 .side-link .side-icon {
   min-width: 22px;

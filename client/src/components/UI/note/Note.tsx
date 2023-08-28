@@ -2,7 +2,6 @@ import {FC} from 'react'
 import classes from './note.module.scss'
 import paperIcon from '../../../assets/navicons/paper.svg';
 import threedots from '../../../assets/navicons/threedots.svg';
-import Tag from '../../Projects/Tag.tsx';
 import {ITag} from '../../../types.ts'
 
 
@@ -27,11 +26,11 @@ const Note: FC<NoteProps> = ({ date, theme, text, tags, className }) => {
       </div>
       <div className={classes.theme}>{theme}</div>
       <div className={classes.text}>{text}</div>
-      <div className={classes.categories}>
-        {tags.map((tag, index) => (
-          <Tag key={index} text={tag.name} color={tag.color} />
-        ))}
-      </div>
+      {/*<div className={classes.categories}>*/}
+      {/*  {tags.map((tag, index) => (*/}
+      {/*    <Tag key={index} text={tag.name} color={tag.color} />*/}
+      {/*  ))}*/}
+      {/*</div>*/}
     </div>
   );
 };

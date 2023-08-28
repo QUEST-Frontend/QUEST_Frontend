@@ -1,0 +1,187 @@
+.projectCard{
+  min-width: 248px;
+  padding: 10px 10px 22px;
+  border: 1px solid #E6E4F0;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #ffffff;
+
+  .cardImage{
+    width: 100%;
+    height: 112px;
+    border-radius: 10px;
+  }
+
+  .content{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 10px;
+
+    .info{
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+
+      .infoLeft{
+        display: flex;
+        gap: 7px;
+        align-items: center;
+      }
+
+      .projectImage{
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+      }
+
+      .projectName{
+        font-weight: 600;
+        font-size: 1rem;
+      }
+    }
+    .tags{
+      display: flex;
+      gap: 3px;
+    }
+  }
+
+  .element {
+    padding: 4px 7px;
+    background-color: white;
+    font-size: 0.8rem;
+    cursor: pointer;
+    border-bottom: 1px solid #9D9BA1;
+
+    &:hover {
+      background-color: rgb(243, 243, 243);
+    }
+
+    &:last-child{
+      border-bottom: none;
+    }
+  }
+
+  .modal{
+    max-width: 830px;
+
+    .header{
+      position: relative;
+      width: 100%;
+      height: 198px;
+      border-radius: 14px;
+
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .headerInfo{
+      position: absolute;
+      bottom: 0;
+      padding: 32px;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      .heading{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .projectImage{
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+        }
+
+        .projectName{
+          color: white;
+        }
+      }
+
+      .dates{
+        display: flex;
+        gap: 16px;
+        font-size: 0.875rem;
+
+        h3{
+          color: rgba(0, 0, 0, 0.40);
+          font-weight: 600;
+        }
+
+        p{
+          font-weight: 500;
+        }
+      }
+    }
+
+    .body{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 22px 0;
+    }
+
+    .description{
+      display: flex;
+      flex-direction: column;
+      max-width: 372px;
+
+      h2{
+        font-size: 1rem;
+        margin-bottom: 6px;
+      }
+      p{
+        color: #999;
+        font-size: 0.875rem;
+      }
+    }
+
+    .infoList{
+      display: flex;
+      max-width: 350px;
+      width: 100%;
+      flex-direction: column;
+      gap: 12px;
+
+      .item{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+
+        .field{
+          display: flex;
+          align-items: center;
+          gap: 7px;
+          color: #82808F;
+
+          .icon{
+            width: 24px;
+            height: 24px;
+          }
+
+          h2{
+            font-size: 1rem;
+          }
+        }
+
+        .value{
+          display: flex;
+          gap: 3px;
+          font-size: 0.875rem;
+          font-weight: 700;
+          color: #999;
+        }
+      }
+    }
+  }
+}
+
+

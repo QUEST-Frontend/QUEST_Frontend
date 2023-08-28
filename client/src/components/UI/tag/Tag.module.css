@@ -1,0 +1,11 @@
+.tag {
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: rgba(253, 113, 175, 0.3019607843);
+  color: #FD71AF;
+  border-radius: 33px;
+  display: inline-block;
+}
+
+/*# sourceMappingURL=Tag.module.css.map */
