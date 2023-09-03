@@ -17,10 +17,10 @@ export interface ITag{
 }
 
 export interface INote {
-  date: string
-  theme: string
+  id: number
+  title: string
   text: string
-  tags: ITag[]
+  is_favorite: boolean
 }
 
 

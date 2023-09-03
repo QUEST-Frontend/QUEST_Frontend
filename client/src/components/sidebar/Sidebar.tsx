@@ -22,10 +22,9 @@ const Sidebar: FC = () => {
   const projects = useSelector(projectsSelector)
   const pending = useSelector(projectsPendingSelector)
   const sideLinks: ISidebarLink[] = [
-    { name: 'Overview', icon: overviewIcon, path: '/overview' },
-    { name: 'Calendar', icon: calendarIcon, path: '/calendar' },
-    { name: 'Analytics', icon: analyticsIcon, path: '/analytics' },
-    { name: 'Tasks', icon: tasksIcon, path: '/tasks' },
+    { name: 'Overview', icon: overviewIcon, path: '/' },
+    { name: 'Calendar', icon: calendarIcon, path: '/' },
+    { name: 'Analytics', icon: analyticsIcon, path: '/' },
     { name: 'Projects', icon: projectsIcon, path: '/projects' },
     { name: 'Teams', icon: teamsIcon, path: '/teams' },
   ];

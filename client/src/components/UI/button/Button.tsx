@@ -1,12 +1,12 @@
-import {FC, type ReactNode, useState} from 'react'
+import {type ButtonHTMLAttributes, FC, type ReactNode, useState} from 'react'
 import {motion} from 'framer-motion'
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<any>{
   className?: string
   children: ReactNode
   textColor: string
   bgColor: string
-  style: any
+  style?: any,
 }
 
 const Button: FC<ButtonProps> = ({className, bgColor, textColor, children, style, ...props }) => {
@@ -36,13 +36,18 @@ const Button: FC<ButtonProps> = ({className, bgColor, textColor, children, style
     ...style,
   }
 
+
   return (
-      <motion.button
+      <motion.div
           whileHover={{scale: 1.08}}
           transition={{type: 'spring', stiffness: 200}}
-          style={buttonStyle} className={className} {...props} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-        {children}
-      </motion.button>
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+      >
+        <div style={buttonStyle} className={className} {...props}>
+          {children}
+        </div>
+      </motion.div>
   )
 }
 

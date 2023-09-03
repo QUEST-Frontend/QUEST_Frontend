@@ -1,0 +1,91 @@
+.kanbanCard{
+  padding: 16px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #E6E4F0;
+  background: #FFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+
+  .name{
+    display: flex;
+    align-items: center;
+    color: rgba(86, 85, 92, 1);
+    gap: 5px;
+
+    h2{
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+  }
+
+  .user{
+    font-weight: 500;
+    font-size: 0.875rem;
+  }
+
+  .tags, .users{
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+  .cardBottom{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.statusSquare {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+
+.headerStatus{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  span{
+    color: rgba(130, 128, 143, 1);
+    font-weight: 600;
+    line-height: normal;
+    font-size: 0.875rem;
+  }
+}
+
+.headerItem{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 99999999999999999999;
+}
+
+.plusIcon{
+  background-color: rgba(86, 85, 92, 0.3);
+  border-radius: 3px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerIcons{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tasks{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 13px 0;
+}

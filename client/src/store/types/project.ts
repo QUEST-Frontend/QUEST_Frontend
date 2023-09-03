@@ -1,12 +1,14 @@
-import {IProject} from '../../models/IProject.ts'
+import {IColumn, IProject} from '../../models/IProject.ts'
 
 export enum ProjectActionTypes {
-  GET_PROJECTS = "project/getProjects"
+  GET_PROJECTS = "project/getProjects",
+  GET_PROJECT_COLUMNS = "project/getProjectColumns"
 }
 
 export interface ProjectsState {
   projects: IProject[]
   pending: boolean
+  columns: IColumn[]
 }
 
 export interface GetProjectsResponse{
@@ -24,8 +26,15 @@ export interface GetProjectsSuccessPayload {
   pageCount: number
   results: IProject[]
 }
+export interface GetProjectColumnsSuccessPayload {
+  next: boolean
+  previous: boolean
+  count: number
+  pageCount: number
+  results: IColumn[]
+}
 
-
-export interface GetProjectsAction {
-  type: ProjectActionTypes.GET_PROJECTS,
+export interface GetProjectColumnsAction {
+  type: ProjectActionTypes.GET_PROJECT_COLUMNS,
+  payload: string
 }

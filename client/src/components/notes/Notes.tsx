@@ -2,30 +2,16 @@ import classes from './notes.module.scss';
 import notesIcon from '../../assets/navicons/notes.svg';
 import plusIcon from '../../assets/navicons/plus.svg';
 import Note from '../UI//note/Note';
-import {FC} from 'react'
-import {INote, ITag} from '../../types.ts'
+import {FC, useEffect} from 'react'
+import {useSelector} from 'react-redux'
+import {notesSelector} from '../../store/features/notes/notesSlice.ts'
 
 const Notes: FC = () => {
-    const tags: ITag[] = [
-        {name: 'Science', color: 'red'},
-        {name: 'Tech', color: 'blue'},
-        {name: 'Hi-fi', color: 'green'},
-    ];
-    const notesData: INote[] = [
-        {
-            date: "2 Apr. 2023",
-            theme: "ChatGPT Tricks for business marketing",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id dui mi. Fusce varius bibendum ante, non lacinia. Fall usasc ce variu slorem ipsum dolor sit amet",
-            tags: tags,
-        },
-        {
-            date: "4 May. 2023",
-            theme: "Some italic theme with a small font",
-            text: "Dolor in a small font with a small font background color",
-            tags: tags,
-        },
+    const notes = useSelector(notesSelector)
+    useEffect(() => {
+        console.log(notes)
+    }, [notes])
 
-    ];
     return (
         <div className={classes.container}>
             <div className={classes['notes-container']}>
@@ -40,13 +26,12 @@ const Notes: FC = () => {
 
                     <div className={classes.scrollable}>
                         <div className={classes.notes}>
-                            {notesData.map((note, index) => (
+                            {notes.map((note, index) => (
                                 <Note
                                     key={index}
-                                    date={note.date}
-                                    theme={note.theme}
+                                    title={note.title}
                                     text={note.text}
-                                    tags={note.tags}
+                                    isFavourite={note.is_favorite}
                                     className={classes['note-item']}
                                 />
                             ))}
