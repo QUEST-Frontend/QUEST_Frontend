@@ -3,6 +3,7 @@ import createSagaMiddleware from "redux-saga"
 import authReducer from "./features/auth/authSlice.ts"
 import projectReducer from "./features/project/projectSlice.ts"
 import taskReducer from "./features/task/taskSlice.ts"
+import noteReducer from "./features/notes/notesSlice.ts"
 import {rootSaga} from "./rootSaga.ts";
 
 const sagaMiddleware = createSagaMiddleware()
@@ -12,6 +13,7 @@ export const store = configureStore({
     auth: authReducer,
     project: projectReducer,
     task: taskReducer,
+    note: noteReducer
   },
   devTools: true,
   middleware

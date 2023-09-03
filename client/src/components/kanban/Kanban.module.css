@@ -29,6 +29,12 @@
   gap: 5px;
   flex-wrap: wrap;
 }
+.kanbanCard .cardBottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
 
 .statusSquare {
   width: 12px;

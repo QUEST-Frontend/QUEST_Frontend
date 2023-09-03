@@ -14,6 +14,7 @@ import { router } from './routes'
 import { ToastContainer } from 'react-toastify'
 import { getProjects } from './store/features/project/projectSlice.ts'
 import { getTasks } from './store/features/task/taskSlice.ts'
+import {getNotes} from './store/features/notes/notesSlice.ts'
 
 
 export default function App() {
@@ -32,6 +33,7 @@ export default function App() {
     if (user) {
       dispatch(getProjects())
       dispatch(getTasks())
+      dispatch(getNotes())
     }
   }, [user])
 

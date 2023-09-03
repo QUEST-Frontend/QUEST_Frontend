@@ -6,7 +6,7 @@ import {BiDotsHorizontalRounded} from 'react-icons/bi'
 import KanbanCard from 'components/kanban/KanbanCard.tsx'
 import {ITask} from '../../models/ITask.ts'
 import {useDroppable} from '@dnd-kit/core'
-import {SortableContext, verticalListSortingStrategy} from '@dnd-kit/sortable'
+import {SortableContext} from '@dnd-kit/sortable'
 
 interface KanbanRowProps {
   id: number | string
@@ -39,7 +39,7 @@ export const KanbanColumn: FC<KanbanRowProps> = ({id, headerColor, headerText, c
 
           <div className={cl.tasks} ref={setNodeRef}>
             <SortableContext items={tasksId as number[]} id={id as string} >
-              {tasks?.map(task => <KanbanCard key={task.id} id={task.id} tags={task.task_tags} name={task.name} users={task.assigned_users} columnId={task.column}/>)}
+              {tasks?.map(task => <KanbanCard key={task.id} id={task.id} tags={task.task_tags} name={task.name} users={task.assigned_users} columnId={task.column} priority={task.priority}/>)}
             </SortableContext>
           </div>
       </div>

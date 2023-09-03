@@ -14,4 +14,5 @@ export interface ITask{
   project: number
   assigned_users: IPerson[]
   column: number
+  priority: string
 }

@@ -59,7 +59,15 @@ export const router: RouteObject[] = [
                 <KanbanPage/>
               </AuthPageGuard>
           )
-        }
+        },
+      {
+        path: '',
+        element: (
+            <AuthPageGuard>
+              <NotFoundPage/>
+            </AuthPageGuard>
+        )
+      }
     ]
   },
   {
