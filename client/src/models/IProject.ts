@@ -16,6 +16,15 @@ export interface IProject {
   header: string
 }
 
+export interface IColumn {
+  id: number
+  name: string
+  color_name: string
+  color_code: string
+  project: number
+}
+
+
 export interface IUserProjectsRequest {
     token: string
 }

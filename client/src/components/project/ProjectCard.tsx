@@ -13,6 +13,7 @@ import Button from 'components/UI/button/Button.tsx'
 import {FaTasks} from 'react-icons/fa'
 import {IoMdCloseCircle} from 'react-icons/io'
 import {motion} from 'framer-motion'
+import {useNavigate} from 'react-router-dom'
 
 interface ProjectCardProps {
   project: IProject,
@@ -20,6 +21,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: FC<ProjectCardProps> = ({project}) => {
+  const navigate = useNavigate()
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
   const [isMoreOpened, setIsMoreOpened] = useState<boolean>(false)
 
@@ -39,7 +41,9 @@ const ProjectCard: FC<ProjectCardProps> = ({project}) => {
   //     },
   //   }),
   // };
-
+  function handleClickTasks(){
+    navigate('/tasks/' + project.id)
+  }
   return (
       <div className={cl.projectCard}>
         <img src={project.mini_header} className={cl.cardImage} alt=""/>
@@ -138,7 +142,7 @@ const ProjectCard: FC<ProjectCardProps> = ({project}) => {
             <div className={cl.description}>
               <h2>Description</h2>
               <p>{project.description}</p>
-              <Button bgColor="rgba(123, 104, 238, 0.3)" textColor="rgba(123, 104, 238, 1)" style={{alignSelf: 'flex-end'}}>Tasks <FaTasks/></Button>
+              <Button onClick={handleClickTasks} bgColor="rgba(123, 104, 238, 0.3)" textColor="rgba(123, 104, 238, 1)" style={{alignSelf: 'flex-end'}}>Tasks <FaTasks/></Button>
             </div>
           </div>
         </Modal>

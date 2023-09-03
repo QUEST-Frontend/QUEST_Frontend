@@ -14,6 +14,7 @@ const AuthPage = Loadable(lazy(async() => await import('./pages/auth/AuthPage'))
 const ProjectsPage = Loadable(lazy(async() => await import('./pages/projects/ProjectsPage')))
 const NotFoundPage = Loadable(lazy(async() => await import('./pages/notFound/NotFound404')))
 const ProfilePage = Loadable(lazy(async() => await import('./pages/profile/Profile')))
+const KanbanPage = Loadable(lazy(async() => await import('./pages/kanban/Kanban')))
 
 export const router: RouteObject[] = [
   {
@@ -47,6 +48,19 @@ export const router: RouteObject[] = [
           <ProfilePage/>
         </AuthPageGuard>
     )
+  },
+  {
+    path: 'tasks',
+    children: [
+        {
+          path: ':id',
+          element: (
+              <AuthPageGuard>
+                <KanbanPage/>
+              </AuthPageGuard>
+          )
+        }
+    ]
   },
   {
     path: '*',

@@ -1,11 +1,16 @@
 import {createSlice, PayloadAction, createAction} from "@reduxjs/toolkit";
 import {RootState} from '../../index.ts'
-import {GetProjectsSuccessPayload, ProjectsState} from '../../types/project.ts'
-import {IProject} from '../../../models/IProject.ts'
+import {
+  GetProjectColumnsSuccessPayload,
+  GetProjectsSuccessPayload,
+  ProjectsState
+} from '../../types/project.ts'
+import {IColumn, IProject} from '../../../models/IProject.ts'
 
 const initialState: ProjectsState =  {
   pending: false,
-  projects: []
+  projects: [],
+  columns: []
 }
 
 const projectSlice = createSlice({
@@ -19,6 +24,13 @@ const projectSlice = createSlice({
       state.pending = false
       state.projects = action.payload.results
     },
+    getProjectColumns: (state) => {
+      state.pending = true
+    },
+    getProjectColumnsSuccess: (state, action: PayloadAction<GetProjectColumnsSuccessPayload> ) => {
+      state.pending = false
+      state.columns = action.payload.results
+    },
   },
   extraReducers: {
 
@@ -27,8 +39,10 @@ const projectSlice = createSlice({
 
 export const getProjects = createAction('project/getProjects')
 export const getProjectsSuccess = createAction<GetProjectsSuccessPayload>('project/getProjectsSuccess')
-
+export const getProjectColumns = createAction<string>('project/getProjectColumns')
+export const getProjectColumnsSuccess = createAction<GetProjectColumnsSuccessPayload>('project/getProjectColumnsSuccess')
 export const projectsSelector = ((state: RootState): IProject[] | null => state.project.projects)
 export const projectsPendingSelector = ((state: RootState): boolean => state.project.pending)
+export const projectColumnsSelector = ((state: RootState): IColumn[] => state.project.columns)
 
 export default projectSlice.reducer

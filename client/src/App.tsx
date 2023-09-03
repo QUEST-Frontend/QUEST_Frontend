@@ -13,6 +13,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import { router } from './routes'
 import { ToastContainer } from 'react-toastify'
 import { getProjects } from './store/features/project/projectSlice.ts'
+import { getTasks } from './store/features/task/taskSlice.ts'
 
 
 export default function App() {
@@ -30,6 +31,7 @@ export default function App() {
   useEffect(() => {
     if (user) {
       dispatch(getProjects())
+      dispatch(getTasks())
     }
   }, [user])
 
